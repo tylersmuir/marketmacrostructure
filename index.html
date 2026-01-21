@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Macrostructure | Research Resources</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Market Macrostructure</a>
+            <ul class="nav-menu">
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#framework">Framework</a></li>
+                <li><a href="#applications">Applications</a></li>
+                <li><a href="#papers">Papers</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Market Macrostructure</h1>
+            <p class="hero-subtitle">Understanding How Institutional Investors Shape Asset Prices</p>
+            <p class="hero-description">A research framework for PhD students exploring the intersection of institutional finance, asset pricing, and market structure.</p>
+            <a href="#overview" class="btn btn-primary">Explore the Framework</a>
+        </div>
+        <div class="hero-visual">
+            <svg viewBox="0 0 500 300" class="hero-diagram">
+                <!-- Households -->
+                <g class="node households">
+                    <circle cx="250" cy="50" r="40" fill="#4A90A4"/>
+                    <text x="250" y="55" text-anchor="middle" fill="white" font-size="14" font-weight="600">Households</text>
+                </g>
+                <!-- Institutions -->
+                <g class="node institutions">
+                    <circle cx="100" cy="200" r="40" fill="#7FB069"/>
+                    <text x="100" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="600">Passive</text>
+                    <text x="100" y="210" text-anchor="middle" fill="white" font-size="12" font-weight="600">Funds</text>
+                </g>
+                <g class="node institutions">
+                    <circle cx="250" cy="250" r="40" fill="#E07A5F"/>
+                    <text x="250" y="245" text-anchor="middle" fill="white" font-size="12" font-weight="600">Active</text>
+                    <text x="250" y="260" text-anchor="middle" fill="white" font-size="12" font-weight="600">Managers</text>
+                </g>
+                <g class="node institutions">
+                    <circle cx="400" cy="200" r="40" fill="#9B5DE5"/>
+                    <text x="400" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="600">Central</text>
+                    <text x="400" y="210" text-anchor="middle" fill="white" font-size="12" font-weight="600">Banks</text>
+                </g>
+                <!-- Connections -->
+                <line x1="220" y1="85" x2="130" y2="165" stroke="#ccc" stroke-width="2"/>
+                <line x1="250" y1="90" x2="250" y2="210" stroke="#ccc" stroke-width="2"/>
+                <line x1="280" y1="85" x2="370" y2="165" stroke="#ccc" stroke-width="2"/>
+                <!-- Assets in center -->
+                <rect x="200" y="140" width="100" height="40" rx="5" fill="#F4A261"/>
+                <text x="250" y="165" text-anchor="middle" fill="white" font-size="14" font-weight="600">Assets</text>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Overview Section -->
+    <section id="overview" class="section">
+        <div class="container">
+            <h2 class="section-title">What is Market Macrostructure?</h2>
+            <p class="section-intro">Market macrostructure studies how the composition and behavior of institutional investors affects asset prices at the aggregate level. Unlike microstructure (which focuses on trading mechanics), macrostructure examines the "big picture" of who holds assets and how their demand functions shape equilibrium prices.</p>
+
+            <div class="pillars-grid">
+                <div class="pillar-card">
+                    <div class="pillar-icon who">
+                        <svg viewBox="0 0 64 64" width="48" height="48">
+                            <circle cx="32" cy="20" r="12" fill="currentColor"/>
+                            <path d="M12 56c0-11 9-20 20-20s20 9 20 20" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>Who</h3>
+                    <p>Who are the investors? Households, pension funds, mutual funds, ETFs, hedge funds, central banks, insurance companies.</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon how">
+                        <svg viewBox="0 0 64 64" width="48" height="48">
+                            <path d="M8 48 L24 24 L40 36 L56 12" stroke="currentColor" stroke-width="4" fill="none"/>
+                            <circle cx="24" cy="24" r="4" fill="currentColor"/>
+                            <circle cx="40" cy="36" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>How</h3>
+                    <p>How do they form portfolios? What are their demand functions? How do constraints, mandates, and benchmarks shape behavior?</p>
+                </div>
+                <div class="pillar-card">
+                    <div class="pillar-icon what">
+                        <svg viewBox="0 0 64 64" width="48" height="48">
+                            <rect x="8" y="28" width="12" height="28" fill="currentColor"/>
+                            <rect x="26" y="16" width="12" height="40" fill="currentColor"/>
+                            <rect x="44" y="8" width="12" height="48" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>What</h3>
+                    <p>What are the price implications? How do shifts in investor composition affect risk premia, volatility, and market efficiency?</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Insight Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">The Key Insight</h2>
+            <div class="insight-grid">
+                <div class="insight-comparison">
+                    <div class="comparison-card traditional">
+                        <h4>Traditional View</h4>
+                        <p class="comparison-equation">E[R] = f(Risk, Preferences)</p>
+                        <p>Asset prices determined by risk and representative agent preferences. Institutions are a "veil."</p>
+                    </div>
+                    <div class="comparison-arrow">
+                        <svg viewBox="0 0 40 24" width="40" height="24">
+                            <path d="M0 12 L30 12 M22 4 L30 12 L22 20" stroke="currentColor" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <div class="comparison-card macrostructure">
+                        <h4>Macrostructure View</h4>
+                        <p class="comparison-equation">E[R] = f(Risk, Preferences, <span class="highlight">Institutions</span>)</p>
+                        <p>Institutional frictions and constraints create demand that affects equilibrium prices beyond fundamentals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="key-quote">
+                <blockquote>
+                    "The identity and behavior of the marginal investor matters for asset prices."
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Framework Section -->
+    <section id="framework" class="section">
+        <div class="container">
+            <h2 class="section-title">The Theoretical Framework</h2>
+            <p class="section-intro">The macrostructure framework builds on a tractable demand-based model that allows us to aggregate diverse investor types and understand equilibrium price formation.</p>
+
+            <div class="framework-diagram">
+                <svg viewBox="0 0 800 400" class="model-svg">
+                    <!-- Background boxes -->
+                    <rect x="50" y="50" width="200" height="120" rx="10" fill="#E8F4F8" stroke="#4A90A4" stroke-width="2"/>
+                    <rect x="300" y="50" width="200" height="120" rx="10" fill="#E8F8E8" stroke="#7FB069" stroke-width="2"/>
+                    <rect x="550" y="50" width="200" height="120" rx="10" fill="#FFF3E8" stroke="#E07A5F" stroke-width="2"/>
+
+                    <!-- Labels -->
+                    <text x="150" y="85" text-anchor="middle" font-size="16" font-weight="600" fill="#4A90A4">Investor i Demand</text>
+                    <text x="150" y="120" text-anchor="middle" font-size="14" fill="#333">Q<tspan baseline-shift="sub" font-size="10">i</tspan> = A<tspan baseline-shift="sub" font-size="10">i</tspan>(μ - P)</text>
+                    <text x="150" y="145" text-anchor="middle" font-size="12" fill="#666">Linear in expected excess returns</text>
+
+                    <text x="400" y="85" text-anchor="middle" font-size="16" font-weight="600" fill="#7FB069">Market Clearing</text>
+                    <text x="400" y="120" text-anchor="middle" font-size="14" fill="#333">Σ Q<tspan baseline-shift="sub" font-size="10">i</tspan> = S</text>
+                    <text x="400" y="145" text-anchor="middle" font-size="12" fill="#666">Total demand = Supply</text>
+
+                    <text x="650" y="85" text-anchor="middle" font-size="16" font-weight="600" fill="#E07A5F">Equilibrium Price</text>
+                    <text x="650" y="120" text-anchor="middle" font-size="14" fill="#333">P = μ - S/A</text>
+                    <text x="650" y="145" text-anchor="middle" font-size="12" fill="#666">A = Σ A<tspan baseline-shift="sub" font-size="10">i</tspan> (aggregate)</text>
+
+                    <!-- Arrows -->
+                    <path d="M255 110 L295 110" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+                    <path d="M505 110 L545 110" stroke="#333" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+                    <!-- Key insight box -->
+                    <rect x="200" y="220" width="400" height="100" rx="10" fill="#F9F3FF" stroke="#9B5DE5" stroke-width="2"/>
+                    <text x="400" y="255" text-anchor="middle" font-size="16" font-weight="600" fill="#9B5DE5">Key Insight</text>
+                    <text x="400" y="280" text-anchor="middle" font-size="14" fill="#333">Price impact depends on A<tspan baseline-shift="sub" font-size="10">i</tspan>/A</text>
+                    <text x="400" y="300" text-anchor="middle" font-size="12" fill="#666">An investor's share of total market risk-bearing capacity</text>
+
+                    <!-- Arrow definition -->
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                            <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+                        </marker>
+                    </defs>
+                </svg>
+            </div>
+
+            <div class="framework-features">
+                <div class="feature-card">
+                    <h4>Tractable Aggregation</h4>
+                    <p>Linear demands allow simple aggregation across heterogeneous investors with different risk tolerances and beliefs.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Compositional Effects</h4>
+                    <p>Changes in who holds assets (e.g., shift to passive) affect prices even with fixed total wealth.</p>
+                </div>
+                <div class="feature-card">
+                    <h4>Demand Elasticity</h4>
+                    <p>The aggregate demand elasticity A determines how much prices must adjust to clear markets.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Applications Section -->
+    <section id="applications" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Three Major Applications</h2>
+            <p class="section-intro">The macrostructure framework illuminates three important phenomena in modern financial markets.</p>
+
+            <div class="applications-grid">
+                <!-- Application 1: Intermediaries -->
+                <div class="application-card">
+                    <div class="app-header intermediaries">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 64 64" width="40" height="40">
+                                <rect x="8" y="24" width="48" height="32" rx="4" fill="currentColor"/>
+                                <rect x="16" y="8" width="32" height="20" rx="2" fill="currentColor" opacity="0.7"/>
+                            </svg>
+                        </div>
+                        <h3>Financial Intermediaries</h3>
+                    </div>
+                    <div class="app-content">
+                        <p class="app-description">When intermediary health deteriorates, their risk-bearing capacity falls, amplifying price movements.</p>
+                        <div class="app-visual">
+                            <svg viewBox="0 0 300 150" class="app-diagram">
+                                <!-- Feedback loop -->
+                                <circle cx="80" cy="75" r="35" fill="#FFE5E5" stroke="#E07A5F" stroke-width="2"/>
+                                <text x="80" y="70" text-anchor="middle" font-size="10" fill="#333">Asset</text>
+                                <text x="80" y="82" text-anchor="middle" font-size="10" fill="#333">Prices ↓</text>
+
+                                <circle cx="220" cy="75" r="35" fill="#E5F0FF" stroke="#4A90A4" stroke-width="2"/>
+                                <text x="220" y="70" text-anchor="middle" font-size="10" fill="#333">Intermediary</text>
+                                <text x="220" y="82" text-anchor="middle" font-size="10" fill="#333">Wealth ↓</text>
+
+                                <!-- Arrows -->
+                                <path d="M115 55 Q150 30 185 55" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+                                <path d="M185 95 Q150 120 115 95" stroke="#666" stroke-width="2" fill="none" marker-end="url(#arrow2)"/>
+
+                                <text x="150" y="25" text-anchor="middle" font-size="9" fill="#666">Losses reduce</text>
+                                <text x="150" y="135" text-anchor="middle" font-size="9" fill="#666">Less demand</text>
+
+                                <defs>
+                                    <marker id="arrow2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                        <polygon points="0 0, 8 3, 0 6" fill="#666"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="app-papers">
+                            <h5>Key Papers</h5>
+                            <ul>
+                                <li>He & Krishnamurthy (2013)</li>
+                                <li>Adrian, Etula & Muir (2014)</li>
+                                <li>Haddad & Muir (2021)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application 2: Passive Investing -->
+                <div class="application-card">
+                    <div class="app-header passive">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 64 64" width="40" height="40">
+                                <circle cx="32" cy="32" r="24" fill="none" stroke="currentColor" stroke-width="4"/>
+                                <path d="M32 32 L32 12" stroke="currentColor" stroke-width="4"/>
+                                <path d="M32 32 L48 40" stroke="currentColor" stroke-width="4"/>
+                            </svg>
+                        </div>
+                        <h3>Rise of Passive Investing</h3>
+                    </div>
+                    <div class="app-content">
+                        <p class="app-description">Passive funds don't respond to prices, reducing aggregate demand elasticity and increasing the burden on remaining active investors.</p>
+                        <div class="app-visual">
+                            <svg viewBox="0 0 300 150" class="app-diagram">
+                                <!-- Bar chart showing shift -->
+                                <rect x="40" y="100" width="60" height="0" fill="#7FB069">
+                                    <animate attributeName="height" from="0" to="80" dur="1s" fill="freeze"/>
+                                    <animate attributeName="y" from="100" to="20" dur="1s" fill="freeze"/>
+                                </rect>
+                                <rect x="120" y="100" width="60" height="0" fill="#4A90A4">
+                                    <animate attributeName="height" from="0" to="40" dur="1s" fill="freeze"/>
+                                    <animate attributeName="y" from="100" to="60" dur="1s" fill="freeze"/>
+                                </rect>
+                                <rect x="200" y="100" width="60" height="0" fill="#E07A5F">
+                                    <animate attributeName="height" from="0" to="60" dur="1s" fill="freeze"/>
+                                    <animate attributeName="y" from="100" to="40" dur="1s" fill="freeze"/>
+                                </rect>
+
+                                <text x="70" y="115" text-anchor="middle" font-size="10" fill="#333">Active</text>
+                                <text x="150" y="115" text-anchor="middle" font-size="10" fill="#333">Passive</text>
+                                <text x="230" y="115" text-anchor="middle" font-size="10" fill="#333">Future?</text>
+
+                                <line x1="30" y1="100" x2="270" y2="100" stroke="#ccc" stroke-width="1"/>
+                            </svg>
+                        </div>
+                        <div class="app-papers">
+                            <h5>Key Papers</h5>
+                            <ul>
+                                <li>Haddad, Huebner & Loualiche (2024)</li>
+                                <li>Ben-David et al. (2022)</li>
+                                <li>Pavlova & Sikorskaya (2023)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Application 3: Central Banks -->
+                <div class="application-card">
+                    <div class="app-header central-banks">
+                        <div class="app-icon">
+                            <svg viewBox="0 0 64 64" width="40" height="40">
+                                <rect x="12" y="28" width="40" height="28" fill="currentColor"/>
+                                <polygon points="32,8 8,28 56,28" fill="currentColor"/>
+                                <rect x="20" y="36" width="8" height="12" fill="white"/>
+                                <rect x="36" y="36" width="8" height="12" fill="white"/>
+                            </svg>
+                        </div>
+                        <h3>Central Bank Asset Purchases</h3>
+                    </div>
+                    <div class="app-content">
+                        <p class="app-description">When central banks buy assets (QE), they remove supply from private markets, pushing up prices and compressing yields.</p>
+                        <div class="app-visual">
+                            <svg viewBox="0 0 300 150" class="app-diagram">
+                                <!-- Supply/Demand diagram -->
+                                <line x1="50" y1="20" x2="50" y2="130" stroke="#333" stroke-width="2"/>
+                                <line x1="50" y1="130" x2="260" y2="130" stroke="#333" stroke-width="2"/>
+
+                                <!-- Demand curve -->
+                                <path d="M70 30 L240 110" stroke="#4A90A4" stroke-width="2" fill="none"/>
+
+                                <!-- Supply curves -->
+                                <line x1="180" y1="30" x2="180" y2="130" stroke="#7FB069" stroke-width="2" stroke-dasharray="5,5"/>
+                                <line x1="130" y1="30" x2="130" y2="130" stroke="#E07A5F" stroke-width="2"/>
+
+                                <!-- Labels -->
+                                <text x="40" y="15" font-size="10" fill="#333">P</text>
+                                <text x="255" y="145" font-size="10" fill="#333">Q</text>
+                                <text x="250" y="115" font-size="9" fill="#4A90A4">Demand</text>
+                                <text x="185" y="45" font-size="9" fill="#7FB069">S (pre-QE)</text>
+                                <text x="95" y="45" font-size="9" fill="#E07A5F">S' (post-QE)</text>
+
+                                <!-- Arrow showing shift -->
+                                <path d="M170 70 L145 70" stroke="#9B5DE5" stroke-width="2" marker-end="url(#arrow3)"/>
+                                <text x="157" y="62" font-size="8" fill="#9B5DE5">QE</text>
+
+                                <defs>
+                                    <marker id="arrow3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                        <polygon points="0 0, 8 3, 0 6" fill="#9B5DE5"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <div class="app-papers">
+                            <h5>Key Papers</h5>
+                            <ul>
+                                <li>Vayanos & Vila (2021)</li>
+                                <li>Krishnamurthy & Vissing-Jorgensen (2011)</li>
+                                <li>Haddad, Moreira & Muir (2024, 2025)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Papers Section -->
+    <section id="papers" class="section">
+        <div class="container">
+            <h2 class="section-title">Reading List for PhD Students</h2>
+            <p class="section-intro">A curated collection of papers organized by topic. Start with the foundational papers, then explore specific applications.</p>
+
+            <div class="papers-container">
+                <!-- Foundational Papers -->
+                <div class="paper-category">
+                    <h3 class="category-title">
+                        <span class="category-icon foundational"></span>
+                        Foundational Papers
+                    </h3>
+                    <div class="paper-list">
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Market Macrostructure: Institutions and Asset Prices</h4>
+                                <p class="paper-authors">Haddad, Valentin and Tyler Muir</p>
+                                <p class="paper-venue">Annual Review of Financial Economics, 2021</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag survey">Survey</span>
+                                <span class="tag start-here">Start Here</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>In Search of the Origins of Financial Fluctuations: The Inelastic Markets Hypothesis</h4>
+                                <p class="paper-authors">Gabaix, Xavier and Ralph Koijen</p>
+                                <p class="paper-venue">Working Paper, 2021</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Asset Pricing with Heterogeneous Agents and Long-Run Risk</h4>
+                                <p class="paper-authors">Garleanu, Nicolae and Stavros Panageas</p>
+                                <p class="paper-venue">Journal of Political Economy, 2015</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag theory">Theory</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Intermediary Papers -->
+                <div class="paper-category">
+                    <h3 class="category-title">
+                        <span class="category-icon intermediaries"></span>
+                        Financial Intermediaries
+                    </h3>
+                    <div class="paper-list">
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Intermediary Asset Pricing</h4>
+                                <p class="paper-authors">He, Zhiguo and Arvind Krishnamurthy</p>
+                                <p class="paper-venue">American Economic Review, 2013</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag theory">Theory</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Financial Intermediaries and the Cross-Section of Asset Returns</h4>
+                                <p class="paper-authors">Adrian, Tobias, Erkko Etula, and Tyler Muir</p>
+                                <p class="paper-venue">Journal of Finance, 2014</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Do Intermediaries Matter for Aggregate Asset Prices?</h4>
+                                <p class="paper-authors">Haddad, Valentin and Tyler Muir</p>
+                                <p class="paper-venue">Journal of Finance, 2021</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Intermediary Asset Pricing: New Evidence from Many Asset Classes</h4>
+                                <p class="paper-authors">He, Zhiguo, Bryan Kelly, and Asaf Manela</p>
+                                <p class="paper-venue">Journal of Financial Economics, 2017</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Passive Investing Papers -->
+                <div class="paper-category">
+                    <h3 class="category-title">
+                        <span class="category-icon passive"></span>
+                        Passive Investing
+                    </h3>
+                    <div class="paper-list">
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4><a href="https://drive.google.com/file/d/1K9gBLkE3boc2WnYPvASoYMZivLsrnFX8/view">How Competitive Is the Stock Market?</a></h4>
+                                <p class="paper-authors">Haddad, Valentin, Paul Huebner, and Erik Loualiche</p>
+                                <p class="paper-venue">Working Paper</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Competition for Attention in the ETF Space</h4>
+                                <p class="paper-authors">Ben-David, Itzhak, Francesco Franzoni, Byungwook Kim, and Rabih Moussawi</p>
+                                <p class="paper-venue">Review of Financial Studies, 2022</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Benchmarking Intensity</h4>
+                                <p class="paper-authors">Pavlova, Anna and Taisiya Sikorskaya</p>
+                                <p class="paper-venue">Review of Financial Studies, 2023</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Index Funds and Stock Market Growth</h4>
+                                <p class="paper-authors">Coles, Jeffrey, Davidson Heath, and Matthew Ringgenberg</p>
+                                <p class="paper-venue">Journal of Finance, 2022</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Central Banks Papers -->
+                <div class="paper-category">
+                    <h3 class="category-title">
+                        <span class="category-icon central-banks"></span>
+                        Central Banks & QE
+                    </h3>
+                    <div class="paper-list">
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4><a href="https://sites.google.com/site/tylersmuir/research">Whatever It Takes? The Impact of Conditional Policy Promises</a></h4>
+                                <p class="paper-authors">Haddad, Valentin, Alan Moreira, and Tyler Muir</p>
+                                <p class="paper-venue">American Economic Review, 2024</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag theory">Theory</span>
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4><a href="https://sites.google.com/site/tylersmuir/research">Asset Purchase Rules</a></h4>
+                                <p class="paper-authors">Haddad, Valentin, Alan Moreira, and Tyler Muir</p>
+                                <p class="paper-venue">Working Paper</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag theory">Theory</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>A Preferred-Habitat Model of the Term Structure of Interest Rates</h4>
+                                <p class="paper-authors">Vayanos, Dimitri and Jean-Luc Vila</p>
+                                <p class="paper-venue">Econometrica, 2021</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag theory">Theory</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>The Effects of Quantitative Easing on Interest Rates</h4>
+                                <p class="paper-authors">Krishnamurthy, Arvind and Annette Vissing-Jorgensen</p>
+                                <p class="paper-venue">Brookings Papers on Economic Activity, 2011</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Bond Supply and Excess Bond Returns</h4>
+                                <p class="paper-authors">Greenwood, Robin and Dimitri Vayanos</p>
+                                <p class="paper-venue">Review of Financial Studies, 2014</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Demand Systems Papers -->
+                <div class="paper-category">
+                    <h3 class="category-title">
+                        <span class="category-icon demand"></span>
+                        Demand System Estimation
+                    </h3>
+                    <div class="paper-list">
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>A Demand System Approach to Asset Pricing</h4>
+                                <p class="paper-authors">Koijen, Ralph and Motohiro Yogo</p>
+                                <p class="paper-venue">Journal of Political Economy, 2019</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                                <span class="tag start-here">Key Paper</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>In Search of the Origins of Financial Fluctuations: The Inelastic Markets Hypothesis</h4>
+                                <p class="paper-authors">Gabaix, Xavier and Ralph Koijen</p>
+                                <p class="paper-venue">Working Paper, 2021</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag empirical">Empirical</span>
+                                <span class="tag start-here">Key Paper</span>
+                            </div>
+                        </div>
+                        <div class="paper-item">
+                            <div class="paper-info">
+                                <h4>Demand-Based Option Pricing</h4>
+                                <p class="paper-authors">Garleanu, Nicolae, Lasse Heje Pedersen, and Allen Poteshman</p>
+                                <p class="paper-venue">Review of Financial Studies, 2009</p>
+                            </div>
+                            <div class="paper-tags">
+                                <span class="tag theory">Theory</span>
+                                <span class="tag empirical">Empirical</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">About This Resource</h2>
+            <div class="about-content">
+                <p>This website provides an introduction to the market macrostructure framework for PhD students interested in research at the intersection of institutional finance and asset pricing.</p>
+                <p>The content is based on the survey paper <a href="#">"Market Macrostructure: Institutions and Asset Prices"</a> by Valentin Haddad and Tyler Muir, published in the Annual Review of Financial Economics (2021).</p>
+                <div class="about-contact">
+                    <h4>Contact</h4>
+                    <p><strong>Tyler Muir</strong><br>
+                    UCLA Anderson School of Management<br>
+                    <a href="https://sites.google.com/site/tylersmuir/">Personal Website</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Tyler Muir. Built for academic research.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
