@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Source+Serif+Pro:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Plotly.js for interactive charts -->
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -17,6 +19,7 @@
             <ul class="nav-menu">
                 <li><a href="#overview">Overview</a></li>
                 <li><a href="#framework">Framework</a></li>
+                <li><a href="#data">Data</a></li>
                 <li><a href="#applications">Applications</a></li>
                 <li><a href="#papers">Papers</a></li>
                 <li><a href="#about">About</a></li>
@@ -38,35 +41,50 @@
             <a href="#overview" class="btn btn-primary">Explore the Framework</a>
         </div>
         <div class="hero-visual">
-            <svg viewBox="0 0 500 300" class="hero-diagram">
-                <!-- Households -->
+            <svg viewBox="0 0 500 320" class="hero-diagram">
+                <!-- Households at top -->
                 <g class="node households">
-                    <circle cx="250" cy="50" r="40" fill="#4A90A4"/>
-                    <text x="250" y="55" text-anchor="middle" fill="white" font-size="14" font-weight="600">Households</text>
+                    <circle cx="250" cy="45" r="40" fill="#4A90A4"/>
+                    <text x="250" y="50" text-anchor="middle" fill="white" font-size="14" font-weight="600">Households</text>
                 </g>
-                <!-- Institutions -->
+                <!-- Intermediaries row -->
                 <g class="node institutions">
-                    <circle cx="100" cy="200" r="40" fill="#7FB069"/>
-                    <text x="100" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="600">Passive</text>
-                    <text x="100" y="210" text-anchor="middle" fill="white" font-size="12" font-weight="600">Funds</text>
-                </g>
-                <g class="node institutions">
-                    <circle cx="250" cy="250" r="40" fill="#E07A5F"/>
-                    <text x="250" y="245" text-anchor="middle" fill="white" font-size="12" font-weight="600">Active</text>
-                    <text x="250" y="260" text-anchor="middle" fill="white" font-size="12" font-weight="600">Managers</text>
+                    <circle cx="60" cy="150" r="35" fill="#7FB069"/>
+                    <text x="60" y="145" text-anchor="middle" fill="white" font-size="11" font-weight="600">Passive</text>
+                    <text x="60" y="158" text-anchor="middle" fill="white" font-size="11" font-weight="600">Funds</text>
                 </g>
                 <g class="node institutions">
-                    <circle cx="400" cy="200" r="40" fill="#9B5DE5"/>
-                    <text x="400" y="195" text-anchor="middle" fill="white" font-size="12" font-weight="600">Central</text>
-                    <text x="400" y="210" text-anchor="middle" fill="white" font-size="12" font-weight="600">Banks</text>
+                    <circle cx="150" cy="150" r="35" fill="#E07A5F"/>
+                    <text x="150" y="145" text-anchor="middle" fill="white" font-size="11" font-weight="600">Active</text>
+                    <text x="150" y="158" text-anchor="middle" fill="white" font-size="11" font-weight="600">Managers</text>
                 </g>
-                <!-- Connections -->
-                <line x1="220" y1="85" x2="130" y2="165" stroke="#ccc" stroke-width="2"/>
-                <line x1="250" y1="90" x2="250" y2="210" stroke="#ccc" stroke-width="2"/>
-                <line x1="280" y1="85" x2="370" y2="165" stroke="#ccc" stroke-width="2"/>
-                <!-- Assets in center -->
-                <rect x="200" y="140" width="100" height="40" rx="5" fill="#F4A261"/>
-                <text x="250" y="165" text-anchor="middle" fill="white" font-size="14" font-weight="600">Assets</text>
+                <g class="node institutions">
+                    <circle cx="240" cy="150" r="35" fill="#E76F51"/>
+                    <text x="240" y="145" text-anchor="middle" fill="white" font-size="10" font-weight="600">Banks &</text>
+                    <text x="240" y="158" text-anchor="middle" fill="white" font-size="10" font-weight="600">Intermediaries</text>
+                </g>
+                <g class="node institutions">
+                    <circle cx="330" cy="150" r="35" fill="#9B5DE5"/>
+                    <text x="330" y="145" text-anchor="middle" fill="white" font-size="11" font-weight="600">Central</text>
+                    <text x="330" y="158" text-anchor="middle" fill="white" font-size="11" font-weight="600">Banks</text>
+                </g>
+                <!-- Connections from Households to intermediaries -->
+                <line x1="215" y1="70" x2="80" y2="120" stroke="#ccc" stroke-width="2"/>
+                <line x1="225" y1="78" x2="175" y2="120" stroke="#ccc" stroke-width="2"/>
+                <line x1="250" y1="85" x2="240" y2="115" stroke="#ccc" stroke-width="2"/>
+                <line x1="275" y1="78" x2="305" y2="120" stroke="#ccc" stroke-width="2"/>
+                <!-- Connections from intermediaries to Assets -->
+                <line x1="60" y1="185" x2="155" y2="255" stroke="#ccc" stroke-width="2"/>
+                <line x1="150" y1="185" x2="190" y2="255" stroke="#ccc" stroke-width="2"/>
+                <line x1="240" y1="185" x2="250" y2="255" stroke="#ccc" stroke-width="2"/>
+                <line x1="330" y1="185" x2="310" y2="255" stroke="#ccc" stroke-width="2"/>
+                <!-- Curved dashed line from Households direct to Assets (far right) -->
+                <path d="M 290 65 Q 480 160 345 255" stroke="#999" stroke-width="2" stroke-dasharray="6,4" fill="none"/>
+                <text x="410" y="155" font-size="9" fill="#666" font-style="italic">direct</text>
+                <text x="410" y="167" font-size="9" fill="#666" font-style="italic">holdings</text>
+                <!-- Assets at bottom -->
+                <rect x="125" y="255" width="220" height="45" rx="5" fill="#F4A261"/>
+                <text x="235" y="283" text-anchor="middle" fill="white" font-size="16" font-weight="600">Assets</text>
             </svg>
         </div>
     </header>
@@ -207,8 +225,41 @@
         </div>
     </section>
 
+    <!-- Data Section -->
+    <section id="data" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Who Holds the Assets?</h2>
+            <p class="section-intro">These interactive charts show how the composition of asset holders has shifted dramatically over time. Data is sourced from the Federal Reserve Z.1 Financial Accounts (Flow of Funds). Hover over the charts to see exact values.</p>
+
+            <div class="charts-grid">
+                <div class="chart-container">
+                    <div id="equities-chart" class="chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div id="treasury-chart" class="chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div id="agency-mbs-chart" class="chart"></div>
+                </div>
+                <div class="chart-container">
+                    <div id="corporate-bonds-chart" class="chart"></div>
+                </div>
+            </div>
+
+            <div class="data-notes">
+                <h4>Key Observations</h4>
+                <ul>
+                    <li><strong>Equities:</strong> Direct household holdings fell from 86% (1960) to 40% (2023), while mutual funds/ETFs rose from 3% to 28%.</li>
+                    <li><strong>Treasuries & Agency/MBS:</strong> The Federal Reserve became a dominant holder through QE, expanding from ~10% of Treasuries pre-2008 to 24% by 2020, and from 2% of Agency/MBS to 30% over the same period.</li>
+                    <li><strong>Corporate Bonds:</strong> Insurance companies' share fell from 45% (1960) to 15% (2023), replaced by mutual funds.</li>
+                    <li><strong>Households:</strong> Direct household holdings in fixed income are remarkably low as of 2023: just 4% of Treasuries, 1% of Agency/MBS, and 7% of corporate bonds.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
     <!-- Applications Section -->
-    <section id="applications" class="section section-alt">
+    <section id="applications" class="section">
         <div class="container">
             <h2 class="section-title">Three Major Applications</h2>
             <p class="section-intro">The macrostructure framework illuminates three important phenomena in modern financial markets.</p>
@@ -394,26 +445,6 @@
                             <div class="paper-tags">
                                 <span class="tag survey">Survey</span>
                                 <span class="tag start-here">Start Here</span>
-                            </div>
-                        </div>
-                        <div class="paper-item">
-                            <div class="paper-info">
-                                <h4>In Search of the Origins of Financial Fluctuations: The Inelastic Markets Hypothesis</h4>
-                                <p class="paper-authors">Gabaix, Xavier and Ralph Koijen</p>
-                                <p class="paper-venue">Working Paper, 2021</p>
-                            </div>
-                            <div class="paper-tags">
-                                <span class="tag empirical">Empirical</span>
-                            </div>
-                        </div>
-                        <div class="paper-item">
-                            <div class="paper-info">
-                                <h4>Asset Pricing with Heterogeneous Agents and Long-Run Risk</h4>
-                                <p class="paper-authors">Garleanu, Nicolae and Stavros Panageas</p>
-                                <p class="paper-venue">Journal of Political Economy, 2015</p>
-                            </div>
-                            <div class="paper-tags">
-                                <span class="tag theory">Theory</span>
                             </div>
                         </div>
                     </div>
@@ -651,5 +682,6 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/charts.js"></script>
 </body>
 </html>
