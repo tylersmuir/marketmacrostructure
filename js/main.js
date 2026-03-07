@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
             navMenu.classList.toggle('active');
-            // Animate hamburger to X
             navToggle.classList.toggle('active');
         });
 
@@ -58,10 +57,16 @@ document.addEventListener('DOMContentLoaded', function() {
     const animateElements = [
         '.pillar-card',
         '.comparison-card',
-        '.feature-card',
+        '.condition-card',
+        '.condition-result',
+        '.method-card',
         '.application-card',
+        '.question-card',
         '.paper-category',
-        '.key-quote'
+        '.philosophy-quote',
+        '.talk-card',
+        '.author-card',
+        '.recipe-step'
     ];
 
     animateElements.forEach(selector => {
@@ -74,19 +79,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Navbar background on scroll
     const navbar = document.querySelector('.navbar');
-    let lastScroll = 0;
 
     window.addEventListener('scroll', () => {
         const currentScroll = window.pageYOffset;
-
-        // Add shadow when scrolled
         if (currentScroll > 50) {
             navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
         } else {
             navbar.style.boxShadow = 'none';
         }
-
-        lastScroll = currentScroll;
     });
 
     // Active nav link highlighting
@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Add hover effects to SVG diagrams
+    // Add hover effects to SVG diagram nodes
     const heroNodes = document.querySelectorAll('.hero-diagram .node');
     heroNodes.forEach(node => {
         node.style.cursor = 'pointer';
@@ -125,7 +125,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Paper filtering (if we add search later)
+    // Paper filtering (available for future search feature)
     function filterPapers(query) {
         const papers = document.querySelectorAll('.paper-item');
         const lowerQuery = query.toLowerCase();
@@ -143,8 +143,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Expose filter function globally if needed
     window.filterPapers = filterPapers;
-
-    console.log('Market Macrostructure website loaded successfully');
 });
