@@ -833,7 +833,14 @@ img {
     align-items: center;
     gap: var(--spacing-md);
     font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+.category-description {
+    color: #666;
+    font-size: 0.95rem;
     margin-bottom: var(--spacing-lg);
+    padding-left: 2rem;
     padding-bottom: var(--spacing-md);
     border-bottom: 2px solid var(--color-border);
 }
