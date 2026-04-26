@@ -1359,23 +1359,36 @@ img {
     display: flex;
     align-items: baseline;
     gap: 0.6rem;
-    padding: 0.4rem 0;
+    padding: 0.5rem 0.75rem;
+    margin-left: -0.75rem;
     color: var(--color-text);
     text-decoration: none;
-    border-bottom: 1px solid transparent;
-    transition: border-color 0.15s ease, color 0.15s ease;
+    border-radius: 6px;
+    transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.chapters li a::before {
+    content: "▸";
+    color: var(--color-primary);
+    font-size: 0.85em;
+    flex-shrink: 0;
+    transition: transform 0.15s ease;
 }
 
 .chapters li a:hover {
+    background-color: rgba(74, 144, 164, 0.08);
     color: var(--color-primary);
-    border-bottom-color: var(--color-primary);
+}
+
+.chapters li a:hover::before {
+    transform: translateX(2px);
 }
 
 .chapters .ts {
     font-variant-numeric: tabular-nums;
     font-weight: 600;
-    color: var(--color-text-muted);
-    min-width: 3.5rem;
+    color: var(--color-primary);
+    min-width: 3.2rem;
     flex-shrink: 0;
 }
 
